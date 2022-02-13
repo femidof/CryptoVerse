@@ -10,7 +10,7 @@ const { Title } = Typography;
 
 
 const Homepage = () => {
-  const { data, isFetching } = useGetCryptosQuery();
+  const { data, isFetching } = useGetCryptosQuery(10);
   console.log(data);
   const globalStats = data?.data?.stats;
 
@@ -34,7 +34,7 @@ const Homepage = () => {
           <Link to='/cryptocurrencies'>Show More</Link>
         </Title>
       </div>
-      <Cryptocurrencies simplified/>
+      <Cryptocurrencies simplified={true}/>
       <div className='home-heading-container'>
         <Title level={2} className="home-title">
           Latest Crypto News
@@ -43,7 +43,7 @@ const Homepage = () => {
           <Link to='/news'>Show More</Link>
         </Title>
       </div>
-      <News simplified/>
+      <News simplified={true}/>
     </>
   )
 }
